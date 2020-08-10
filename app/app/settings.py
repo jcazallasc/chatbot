@@ -131,3 +131,11 @@ REST_FRAMEWORK = {
 }
 
 AUTH_USER_MODEL = 'chatbot.CustomUser'
+
+DIGEST_NOTIFICATION_BATCH = 10
+
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = 'ca27484c3b0bd5'
+EMAIL_HOST_PASSWORD = 'b9b666eae1c7d9'
+EMAIL_PORT = '2525'
+EMAIL_FROM = 'jcazallasc@gmail.com'
