@@ -1,5 +1,3 @@
-import smtplib
-
 from django.conf import settings
 from django.core.mail import send_mail
 
@@ -22,7 +20,8 @@ class NotificationProcessor:
         return 'Welcome {}'.format(self.notification.user.username)
 
     def get_welcome_message(self):
-        return 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s.'
+        return 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. \
+                Lorem Ipsum has been the industry standard dummy text ever since the 1500s.'
 
     def send(self):
         _type = self.notification.extra_data['type']
