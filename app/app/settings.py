@@ -25,7 +25,7 @@ SECRET_KEY = '+u3&5-+==bbz4i*2x39t$%)0^+-nglbol@%%g-9hart+qfz36)'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -129,3 +129,5 @@ STATIC_URL = '/static/'
 REST_FRAMEWORK = {
     'DEFAULT_VERSIONING_CLASS': 'rest_framework.versioning.NamespaceVersioning'
 }
+
+AUTH_USER_MODEL = 'chatbot.CustomUser'
