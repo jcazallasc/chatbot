@@ -6,6 +6,7 @@ ENV PYTHONUNBUFFERED 1
 # Install dependencies
 COPY ./requirements.txt /requirements.txt
 RUN apk add --update --no-cache postgresql-client
+RUN apk add --update --no-cache busybox-suid
 RUN apk add --update --no-cache --virtual .tmp-build-deps \
     gcc libc-dev linux-headers postgresql-dev
 RUN pip install -r /requirements.txt
@@ -16,5 +17,6 @@ RUN mkdir /app
 WORKDIR /app
 COPY ./app/ /app
 
-RUN adduser -D user
-USER user
+RUN echo "* * * * * /app/manage.py digest_notifications" >> /etc/crontabs/root
+
+CMD ["crond", "-l 2", "-f"]
