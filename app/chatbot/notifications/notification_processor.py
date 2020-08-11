@@ -16,14 +16,20 @@ class NotificationProcessor:
             }
         }
 
-    def get_welcome_subject(self):
+    def get_welcome_subject(self) -> str:
+        """Returns the subject for the welcome email"""
+
         return 'Welcome {}'.format(self.notification.user.username)
 
-    def get_welcome_message(self):
+    def get_welcome_message(self) -> str:
+        """Returns the message for the welcome email"""
+
         return 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. \
                 Lorem Ipsum has been the industry standard dummy text ever since the 1500s.'
 
-    def send(self):
+    def send(self) -> None:
+        """Send the notification email"""
+
         _type = self.notification.extra_data['type']
 
         send_mail(
