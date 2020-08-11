@@ -1,4 +1,4 @@
-# Exo currency
+# Chatbot V1
 Supports:
 - Listing users
 - Create new user
