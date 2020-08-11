@@ -5,6 +5,8 @@ from django.utils.translation import gettext_lazy as _
 
 
 class CustomUser(AbstractUser):
+    """Extending the AbstractUser adding/changing fields"""
+
     email = models.EmailField()
     phone = models.CharField(max_length=255)
 
@@ -13,8 +15,8 @@ class CustomUser(AbstractUser):
     def __str__(self):
         return self.username
 
-
 class Notification(models.Model):
+    """Model to store notifications to be send"""
 
     EMAIL = 'Email'
     VIA_CHOICES = [
