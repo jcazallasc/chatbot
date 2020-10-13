@@ -58,3 +58,5 @@ ngrok http 8000
 
 ## What chatbot are you connected to?
 You can find the chatbot here: `https://chats.landbot.io/v2/H-667499-R96SNE0MY6FFSL60/index.html`
+
+## Code climate
